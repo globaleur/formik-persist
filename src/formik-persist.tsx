@@ -36,7 +36,7 @@ class PersistImpl extends React.Component<
       ? window.sessionStorage.getItem(this.props.name)
       : window.localStorage.getItem(this.props.name);
     if (maybeState && maybeState !== null) {
-      this.props.formik.setFormikState(JSON.parse(maybeState));
+      this.props.formik.setFormikState(() => JSON.parse(maybeState));
     }
   }
 
